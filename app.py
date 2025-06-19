@@ -3,11 +3,12 @@ import requests
 
 app = Flask(__name__)
 
-# Liste des bots et chats
+# Liste des bots et chats (4 bots)
 TELEGRAM_BOTS = [
-    {"token": "8186336309:AAFMZ-_3LRR4He9CAg7oxxNmjKGKACsvS8A", "chat_id": "6297861735"},
-    {"token": "7858273702:AAEMIDAD8ZwY_Y0iZliX-5YPXNoHCkeB9HQ", "chat_id": "5214147917"},
-    {"token": "8061642865:AAHHUZGH3Kzx7tN2PSsyLc53235DcVzMqKs", "chat_id": "7650873997"},
+    {"token": "8186336309:AAFMZ-_3LRR4He9CAg7oxxNmjKGKACsvS8A", "chat_id": "6297861735"},  # Bot 1
+    {"token": "7858273702:AAEMIDAD8ZwY_Y0iZliX-5YPXNoHCkeB9HQ", "chat_id": "5214147917"},  # Bot 2
+    {"token": "8061642865:AAHHUZGH3Kzx7tN2PSsyLc53235DcVzMqKs", "chat_id": "7650873997"},  # Bot 3
+    {"token": "8185981027:AAH6QYJxVlYpZl8sv2nPzjj6zcmdxaop6KA", "chat_id": "5974789663"}                         # Bot 4
 ]
 
 @app.route('/')
